@@ -42,7 +42,3 @@ The **share of days with crowd score >= 80** would be tracked by park across com
 If data were a week old, a staffing review could miss recent demand shifts, new ride closures, and special events, increasing the risk of scheduling too few employees or allocating them to the wrong attractions. For same-day queue decisions, this historical dashboard is insufficient: that would require a separate verified live data source and a faster refresh rate.
 
 **Current deployed version:** Frozen Kaggle snapshot through September 30, 2026. It does **not** auto-refresh; the proposed frequency describes a future production system.
-
-## Deploy
-
-Push this folder to a **public repository in your own GitHub account**. Go to [Streamlit Community Cloud](https://share.streamlit.io/), select **Create app**, choose your repository, branch `main`, and main file `app.py`. Set Python to **3.14** in Advanced settings, then deploy. Add your own name/team identification and review this README in your own words before submitting; the course assesses individual justification.
