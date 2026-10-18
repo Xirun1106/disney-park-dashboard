@@ -8,8 +8,8 @@ BASE = Path(__file__).resolve().parent
 
 @st.cache_data
 def load_data():
-    crowd = pd.read_csv(BASE / "data" / "calendar_enriched.csv", parse_dates=["date"])
-    rides = pd.read_csv(BASE / "data" / "ride_stats.csv")
+    crowd = pd.read_csv("calendar_enriched.csv", parse_dates=["date"])
+    rides = pd.read_csv("ride_stats.csv")
     crowd["year"] = pd.to_numeric(crowd["year"], errors="coerce")
     rides["year_num"] = pd.to_numeric(rides["year"], errors="coerce")
     crowd = crowd.dropna(subset=["park_name", "date", "crowd_level_pct", "year"])
@@ -17,7 +17,7 @@ def load_data():
     return crowd, rides
 
 crowd, rides = load_data()
-st.title("🎢 Disney Analytics Team | Park Operations Dashboard")
+st.title("Disney Analytics Team | Park Operations Dashboard")
 st.caption("For park operations managers | Identify historically busy periods and attractions that may need staffing attention.")
 st.info("Historical Kaggle snapshot, NOT live queues. Daily crowd scores and annual attraction wait summaries have different measurement units and granularity.", icon="ℹ️")
 
